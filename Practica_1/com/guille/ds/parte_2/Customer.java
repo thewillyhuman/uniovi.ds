@@ -45,7 +45,8 @@ public class Customer {
 				break;
 			}
 
-			// 2) Cada alquiler da 1 punto. Punto extra para novedades alquiladas 2+ d�as
+			// 2) Cada alquiler da 1 punto. Punto extra para novedades
+			// alquiladas 2+ d�as
 			int points = 1;
 			if ((rental.getMovie().getCategory() == Movie.NEW_RELEASE) && rental.getDays() > 1)
 				points = 2;

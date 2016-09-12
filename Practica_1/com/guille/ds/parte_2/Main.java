@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Customer raul = new Customer("Ra�l");
-		
+
 		Movie hotFuzz = new Movie("Hot Fuzz", Movie.NEW_RELEASE);
 		Movie toyStory = new Movie("Toy Story", Movie.CHILDRENS);
 		Movie zombiesParty = new Movie("Zombies Party", Movie.REGULAR);

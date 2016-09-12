@@ -9,7 +9,6 @@ public class Main {
 		for (int i = 0; i < temperaturas.length; i++)
 			temperaturas[i] = leeSensorCelsius();
 
-	
 		// C�lculo con los datos en Celsius
 		double mediaCelsius = 0;
 		for (int i = 0; i < temperaturas.length; i++)
