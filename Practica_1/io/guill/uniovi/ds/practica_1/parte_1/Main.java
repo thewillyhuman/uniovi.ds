@@ -1,32 +1,32 @@
-package com.guille.ds.parte_1;
+package io.guill.uniovi.ds.practica_1.parte_1;
 
 public class Main {
 
 	public static void main(String[] args) {
-		double[] temperaturas = new double[100];
+		Temperatura[] temperaturas = new Temperatura[100];
 
 		// Toma de datos
 		for (int i = 0; i < temperaturas.length; i++)
-			temperaturas[i] = leeSensorCelsius();
+			temperaturas[i] = new Temperatura(leeSensorCelsius());
 
-		// C�lculo con los datos en Celsius
+		// Cálculo con los datos en Celsius
 		double mediaCelsius = 0;
 		for (int i = 0; i < temperaturas.length; i++)
-			mediaCelsius += temperaturas[i];
+			mediaCelsius += temperaturas[i].getCelsius();
 		mediaCelsius = mediaCelsius / temperaturas.length;
 		System.out.println(mediaCelsius);
 
-		// C�lculo con los datos en Fahrenheit
+		// Cálculo con los datos en Fahrenheit
 		double mediaFahrenheit = 0;
 		for (int i = 0; i < temperaturas.length; i++)
-			mediaFahrenheit += temperaturas[i] * 1.8 + 32;
+			mediaFahrenheit += temperaturas[i].getFarenheit();
 		mediaFahrenheit = mediaFahrenheit / temperaturas.length;
 		System.out.println(mediaFahrenheit);
 
-		// Otro c�lculo con los datos en Fahrenheit
+		// Otro cálculo con los datos en Fahrenheit
 		double varianza = 0;
 		for (int i = 0; i < temperaturas.length; i++)
-			varianza += Math.pow((temperaturas[i] * 1.8 + 32) - mediaFahrenheit, 2);
+			varianza += Math.pow((temperaturas[i].getFarenheit()) - mediaFahrenheit, 2);
 		varianza = varianza / temperaturas.length;
 		System.out.println(varianza);
 	}
