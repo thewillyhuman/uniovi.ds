@@ -5,7 +5,7 @@ package io.guill.uniovi.ds.practica_1.parte_2;
  * 
  * @author Guillermo Facundo Colunga.
  */
-public interface Category {
+public interface MovieType {
 
 	/**
 	 * Gets the price for a given days

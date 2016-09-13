@@ -7,7 +7,7 @@ package io.guill.uniovi.ds.practica_1.parte_2;
  */
 public class Movie {
 	private String title;
-	private Category category;
+	private MovieType category;
 
 	/**
 	 * A movie is composed by a tithe an a Category that in this case will be a
@@ -18,7 +18,7 @@ public class Movie {
 	 * @param category
 	 *            of the movie.
 	 */
-	public Movie(String title, Category category) {
+	public Movie(String title, MovieType category) {
 		this.title = title;
 		this.category = category;
 	}
@@ -28,7 +28,7 @@ public class Movie {
 	 * 
 	 * @return the category of the movie.
 	 */
-	public Category getCategory() {
+	public MovieType getCategory() {
 		return category;
 	}
 
@@ -38,7 +38,7 @@ public class Movie {
 	 * @param category
 	 *            of the movie.
 	 */
-	public void setCategory(Category category) {
+	public void setCategory(MovieType category) {
 		this.category = category;
 	}
 

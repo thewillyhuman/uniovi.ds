@@ -5,7 +5,7 @@ package io.guill.uniovi.ds.practica_1.parte_2;
  * 
  * @author Guillermo Facundo Colunga.
  */
-public class NewReleaseMovie implements Category {
+public class NewReleaseMovie implements MovieType {
 
 	@Override
 	public double getPrice(int daysRented) {
