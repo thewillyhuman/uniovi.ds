@@ -7,6 +7,14 @@ import org.junit.Test;
 
 import io.guill.uniovi.ds.practica_1.parte_1.Temperatura;
 
+/**
+ * Tests the temperature class in order to ensure the correct result of the
+ * transactions between methods and the change between units.
+ * 
+ * @version 1.0
+ * @author Guillermo Facundo Colunga
+ * @repo https://github.com/ZenMaster91/uniovi.ds
+ */
 public class TemperaturaTest {
 
 	Temperatura t1, t2, t3;

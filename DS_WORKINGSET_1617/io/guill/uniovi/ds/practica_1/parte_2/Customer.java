@@ -5,7 +5,9 @@ import java.util.*;
 /**
  * Represents a customer inside the system.
  * 
- * @author Guilermo Facundo Colunga.
+ * @version 2.0
+ * @author Guillermo Facundo Colunga
+ * @repo https://github.com/ZenMaster91/uniovi.ds
  */
 public class Customer {
 
@@ -55,10 +57,10 @@ public class Customer {
 			totalPrice += rental.getPrice();
 			totalPoints += rental.getPoints();
 
-			result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getPrice() + " �\n";
+			result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getPrice() + " E\n";
 		}
 
-		result += "La deuda es de " + totalPrice + " �\n";
+		result += "La deuda es de " + totalPrice + " E\n";
 		result += "Has obtenido " + totalPoints + " puntos en tu tarjeta";
 
 		return result;

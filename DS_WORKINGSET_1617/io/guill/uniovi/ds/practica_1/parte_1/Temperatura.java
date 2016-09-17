@@ -1,5 +1,13 @@
 package io.guill.uniovi.ds.practica_1.parte_1;
 
+/**
+ * Socket for a temperature where we store it in celsius and can work with
+ * farenheit it in both units.
+ * 
+ * @version 3.0
+ * @author Guillermo Facundo Colunga
+ * @repo https://github.com/ZenMaster91/uniovi.ds
+ */
 public class Temperatura {
 
 	private double celsius;

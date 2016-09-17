@@ -3,7 +3,9 @@ package io.guill.uniovi.ds.practica_1.parte_2;
 /**
  * Interface for each movie category.
  * 
- * @author Guillermo Facundo Colunga.
+ * @version 2.0 
+ * @author Guillermo Facundo Colunga
+ * @repo https://github.com/ZenMaster91/uniovi.ds
  */
 public interface MovieType {
 

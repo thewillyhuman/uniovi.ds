@@ -3,9 +3,12 @@ package io.guill.uniovi.ds.practica_1.parte_2;
 /**
  * Represents a movie in the system.
  * 
+ * @version 2.0
  * @author Guillermo Facundo Colunga
+ * @repo https://github.com/ZenMaster91/uniovi.ds
  */
 public class Movie {
+	
 	private String title;
 	private MovieType category;
 
