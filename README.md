@@ -10,7 +10,7 @@ Code format according to the computer-engineering-uniovi standandars: https://gi
 JavaDoc: https://zenmaster91.github.com/uniovi.ds
 
 ## License
-License: https://github.com/ZenMaster91/uniovi.ds/blob/master/LICENSE
+License: [uniovi.ds/LICENSE](https://github.com/ZenMaster91/uniovi.ds/blob/master/LICENSE)
 
 <img src="http://es.creativecommons.org/blog/wp-content/uploads/2013/04/by-nc.eu_petit.png" height="61" align="middle">
 <img src="https://github.com/computer-engineering-uniovi/standars/blob/master/ovicomputing@small.png" align="middle">
