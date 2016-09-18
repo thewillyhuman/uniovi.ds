@@ -7,7 +7,6 @@ This repository contains all the necessary code to understand correctly the subj
 JavaDoc: https://zenmaster91.github.com/uniovi.ds
 
 ## License
-Copyright (c) 2016 Guillermo Facundo Colunga 
 License: https://github.com/zenmaster91/uniovi.ds/LICENSE
 
 <img src="http://es.creativecommons.org/blog/wp-content/uploads/2013/04/by-nc.eu_petit.png" height="61" align="middle">
