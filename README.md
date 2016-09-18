@@ -7,7 +7,7 @@ This repository contains all the necessary code to understand correctly the subj
 Code format according to the computer-engineering-uniovi standandars: https://github.com/computer-engineering-uniovi/standards
 
 ## Documentation
-JavaDoc: <a href="https://zenmaster91.github.com/uniovi.ds" target="_blank">https://zenmaster91.github.com/uniovi.ds</a>
+JavaDoc: https://zenmaster91.github.com/uniovi.ds
 
 ## License
 License: [uniovi.ds/LICENSE](https://github.com/ZenMaster91/uniovi.ds/blob/master/LICENSE)
