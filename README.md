@@ -12,5 +12,6 @@ JavaDoc: https://zenmaster91.github.com/uniovi.ds
 ## License
 License: [uniovi.ds/LICENSE](https://github.com/ZenMaster91/uniovi.ds/blob/master/LICENSE)
 <br>
+<br>
 <img src="https://github.com/computer-engineering-uniovi/standars/blob/master/ovicomputing@small.png" align="middle">
 <img src="https://s3-eu-west-1.amazonaws.com/guille.uniovi/Files/Guill_io-logo%40color.png" height="61" align="middle">
