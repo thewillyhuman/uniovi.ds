@@ -8,12 +8,7 @@ import io.guill.uniovi.ds.files.Files;
 public class Main {
 
 	private static List<String[]> instrucciones = new ArrayList<String[]>();
-	private static int ip = 0;
-
-	private static int[] memoria = new int[1024];
-
-	private static int[] pila = new int[32];
-	private static int sp = 0;
+	private static Computer comp;
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader fichero = new BufferedReader(new FileReader(Files.PATH_IN+"factorial.txt"));
@@ -27,48 +22,73 @@ public class Main {
 	}
 
 	private static void executeProgram() {
-		while (ip < instrucciones.size()) {
-			String[] instruccion = instrucciones.get(ip);
+		while (comp.getIP() < instrucciones.size()) {
+			String[] instruccion = instrucciones.get(comp.getIP());
 
 			if (instruccion[0].equals("push")) {
 				push(Integer.parseInt(instruccion[1]));
-				ip++;
+				comp.increaseIP();
 			} else if (instruccion[0].equals("add")) {
 				push(pop() + pop());
-				ip++;
+				comp.increaseIP();
 			} else if (instruccion[0].equals("sub")) {
 				int b = pop();
 				int a = pop();
 				push(a - b);
-				ip++;
+				comp.increaseIP();
 			} else if (instruccion[0].equals("mul")) {
 				push(pop() * pop());
-				ip++;
+				comp.increaseIP();
 			} else if (instruccion[0].equals("jmp")) {
-				ip = Integer.parseInt(instruccion[1]);
+				comp.setIP(Integer.parseInt(instruccion[1]));
 			} else if (instruccion[0].equals("jmpg")) {
 				int b = pop();
 				int a = pop();
 				if (a > b)
-					ip = Integer.parseInt(instruccion[1]);
+					comp.setIP(Integer.parseInt(instruccion[1]));
 				else
-					ip++;
+					comp.increaseIP();
 			} else if (instruccion[0].equals("load")) {
 				int direccion = pop();
-				push(memoria[direccion]);
-				ip++;
+				push(comp.getMemmoria(direccion));
+				comp.increaseIP();
 			} else if (instruccion[0].equals("store")) {
 				int valor = pop();
 				int direccion = pop();
-				memoria[direccion] = valor;
-				ip++;
+				comp.setMemoria(direccion, valor);
+				comp.increaseIP();
 			} else if (instruccion[0].equals("input")) {
 				System.out.println("Escriba un entero:");
 				push(leerValor());
-				ip++;
+				comp.increaseIP();
 			} else if (instruccion[0].equals("output")) {
 				System.out.println(pop());
-				ip++;
+				comp.increaseIP();
+			}
+		}
+	}
+	
+	private static void executeProgramV2() {
+		List<Instruction> instructions = new ArrayList<>();
+		instructions.add(new Add());
+		instructions.add(new Push());
+		instructions.add(new Mul());
+		instructions.add(new Jmp());
+		instructions.add(new Jmpg());
+		instructions.add(new Load());
+		instructions.add(new Store());
+		instructions.add(new Input());
+		instructions.add(new Output());
+		instructions.add(new Pop());
+		while (comp.getIP() < instrucciones.size()) {
+			String[] instruccion = instrucciones.get(comp.getIP());
+			for(Instruction ins : instructions) {
+				if(ins.isOperation(instruccion[0])) {
+					if(instruccion.length == 2)
+						ins.operation(comp, instruccion[1]);
+					else
+						ins.operation(comp);
+				}
 			}
 		}
 	}
@@ -82,13 +102,13 @@ public class Main {
 	}
 
 	private static void push(int valor) {
-		pila[sp] = valor;
-		sp++;
+		comp.setPila(comp.getSP(), valor);
+		comp.increaseSP();
 	}
 
 	private static int pop() {
-		sp--;
-		return pila[sp];
+		comp.decreaseSP();
+		return comp.getPila(comp.getSP());
 	}
 
 	@SuppressWarnings("resource")
