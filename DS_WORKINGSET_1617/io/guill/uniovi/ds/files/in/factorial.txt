@@ -1,12 +1,12 @@
-push 0 // numero en dirección 0
+push 0
 input 
 store
 
-push 1 // índice en dirección 1
+push 1
 push 1 
 store
 
-push 2 // resultado en dirección 2
+push 2
 push 1 
 store
 

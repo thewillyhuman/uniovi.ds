@@ -25,7 +25,12 @@ public class Push implements Instruction {
 
 	@Override
 	public void operation(Computer comp, String ins) {
-		// TODO Auto-generated method stub
-		
+		comp.setPila(comp.getPila(comp.getSP()), Integer.parseInt(ins));
+		comp.increaseSP();
+	}
+
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
 	}
 }

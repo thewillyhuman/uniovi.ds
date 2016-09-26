@@ -5,7 +5,6 @@ public class Output implements Instruction {
 	@Override
 	public void operation(Computer comp) {
 		System.out.println(new Pop().getValue(comp));
-		comp.increaseIP();
 		
 	}
 
@@ -20,6 +19,11 @@ public class Output implements Instruction {
 	public void operation(Computer comp, String ins) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
 	}
 
 }

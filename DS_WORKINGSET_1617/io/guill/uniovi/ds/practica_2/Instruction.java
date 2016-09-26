@@ -18,4 +18,6 @@ public interface Instruction {
 	 */
 	public boolean isOperation(String name);
 	
+	public void increaseIP(Computer comp);
+	
 }

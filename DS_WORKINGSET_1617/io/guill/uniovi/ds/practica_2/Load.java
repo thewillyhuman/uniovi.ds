@@ -6,7 +6,6 @@ public class Load implements Instruction {
 	public void operation(Computer comp) {
 		int direccion = new Pop().getValue(comp);
 		new Push(comp.getMemmoria(direccion));
-		comp.increaseIP();
 	}
 
 	@Override
@@ -20,6 +19,11 @@ public class Load implements Instruction {
 	public void operation(Computer comp, String ins) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
 	}
 
 }

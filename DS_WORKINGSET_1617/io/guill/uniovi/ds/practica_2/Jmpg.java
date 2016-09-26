@@ -23,5 +23,10 @@ public class Jmpg implements Instruction {
 			return true;
 		return false;
 	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
+	}
 
 }

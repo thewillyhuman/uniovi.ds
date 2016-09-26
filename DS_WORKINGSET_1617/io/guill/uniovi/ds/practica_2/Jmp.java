@@ -17,5 +17,10 @@ public class Jmp implements Instruction {
 			return true;
 		return false;
 	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
+	}
 
 }

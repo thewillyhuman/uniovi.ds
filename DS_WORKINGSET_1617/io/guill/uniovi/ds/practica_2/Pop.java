@@ -25,5 +25,10 @@ public class Pop implements Instruction {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
+	}
 
 }

@@ -5,7 +5,6 @@ public class Mul implements Instruction {
 	@Override
 	public void operation(Computer comp) {
 		new Push(new Pop().getValue(comp) * new Pop().getValue(comp));
-		comp.increaseIP();
 	}
 	
 	@Override
@@ -19,6 +18,11 @@ public class Mul implements Instruction {
 	public void operation(Computer comp, String ins) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
 	}
 
 }

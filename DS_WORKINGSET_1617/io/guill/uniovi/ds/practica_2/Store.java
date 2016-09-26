@@ -7,7 +7,6 @@ public class Store implements Instruction {
 		int valor = new Pop().getValue(comp);
 		int direccion = new Pop().getValue(comp);
 		comp.setMemoria(direccion, valor);
-		comp.increaseIP();
 	}
 
 	@Override
@@ -23,4 +22,8 @@ public class Store implements Instruction {
 		
 	}
 
+	@Override
+	public void increaseIP(Computer comp) {
+		comp.increaseIP();
+	}
 }
