@@ -11,11 +11,6 @@ public class Push implements Instruction {
 		this.value = value;
 	}
 	
-	public void operation(Computer comp) {
-		comp.setPila(comp.getPila(comp.getSP()), value);
-		comp.increaseSP();
-	}
-
 	@Override
 	public boolean isOperation(String name) {
 		if(name.equals("push"))
@@ -23,14 +18,8 @@ public class Push implements Instruction {
 		return false;
 	}
 
-	@Override
-	public void operation(Computer comp, String ins) {
-		comp.setPila(comp.getPila(comp.getSP()), Integer.parseInt(ins));
+	public void operation(Computer comp) {
+		comp.setPila(comp.getSP(), value);
 		comp.increaseSP();
-	}
-
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
 	}
 }

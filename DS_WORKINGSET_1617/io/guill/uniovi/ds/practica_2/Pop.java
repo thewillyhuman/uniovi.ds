@@ -8,12 +8,6 @@ public class Pop implements Instruction {
 	}
 
 	@Override
-	public void operation(Computer comp) {
-		comp.decreaseSP();
-		
-	}
-
-	@Override
 	public boolean isOperation(String name) {
 		if(name.equals("pop"))
 			return true;
@@ -21,14 +15,8 @@ public class Pop implements Instruction {
 	}
 
 	@Override
-	public void operation(Computer comp, String ins) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
+	public void operation(Computer comp) {
+		comp.decreaseSP();
 	}
 
 }

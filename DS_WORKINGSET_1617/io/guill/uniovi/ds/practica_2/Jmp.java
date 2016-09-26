@@ -2,13 +2,19 @@ package io.guill.uniovi.ds.practica_2;
 
 public class Jmp implements Instruction {
 	
+	int jump;
+	
+	public Jmp(int ins) {
+		this.jump = ins;
+	}
+	
+	public Jmp(String ins) {
+		this.jump = Integer.parseInt(ins);
+	}
 
 	@Override
 	public void operation(Computer comp) {
-	}
-	
-	public void operation(Computer comp, String ins) {
-		comp.setIP(Integer.parseInt(ins));
+		comp.setIP(this.jump);
 	}
 	
 	@Override
@@ -16,11 +22,6 @@ public class Jmp implements Instruction {
 		if(name.equals("jmp"))
 			return true;
 		return false;
-	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
 	}
 
 }

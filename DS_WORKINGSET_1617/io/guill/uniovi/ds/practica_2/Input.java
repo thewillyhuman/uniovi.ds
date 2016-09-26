@@ -4,17 +4,11 @@ import java.util.Scanner;
 
 public class Input implements Instruction {
 
-	@Override
-	public void operation(Computer comp) {
-		System.out.println("Escriba un entero:");
-		new Push(leerValor());
-	}
-	
 	@SuppressWarnings("resource")
 	private static int leerValor() {
 		return new Scanner(System.in).nextInt();
 	}
-
+	
 	@Override
 	public boolean isOperation(String name) {
 		if(name.equals("input"))
@@ -23,14 +17,9 @@ public class Input implements Instruction {
 	}
 
 	@Override
-	public void operation(Computer comp, String ins) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
+	public void operation(Computer comp) {
+		System.out.println("Escriba un entero:");
+		new Push(leerValor()).operation(comp);
 		comp.increaseIP();
 	}
-
 }

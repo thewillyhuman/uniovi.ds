@@ -1,18 +1,24 @@
 package io.guill.uniovi.ds.practica_2;
 
 public class Jmpg implements Instruction {
+	
+	int jump;
+	
+	public Jmpg(int ins) {
+		this.jump = ins;
+	}
+	
+	public Jmpg(String ins) {
+		this.jump = Integer.parseInt(ins);
+	}
 
 	@Override
 	public void operation(Computer comp) {
-		
-	}
-
-	public void operation(Computer comp, String ins) {
 		int b = new Pop().getValue(comp);
 		int a = new Pop().getValue(comp);
 		
 		if (a > b)
-			comp.setIP(Integer.parseInt(ins));
+			comp.setIP(this.jump);
 		else
 			comp.increaseIP();
 	}
@@ -23,10 +29,4 @@ public class Jmpg implements Instruction {
 			return true;
 		return false;
 	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
-	}
-
 }

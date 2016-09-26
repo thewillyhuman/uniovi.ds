@@ -7,7 +7,7 @@ public class Add implements Instruction {
 		Pop pop = new Pop();
 		Push push = new Push(pop.getValue(comp) + pop.getValue(comp));
 		push.operation(comp);
-		comp.getIP();
+		comp.increaseIP();
 	}
 	
 	@Override
@@ -15,17 +15,6 @@ public class Add implements Instruction {
 		if(name.equals("add"))
 			return true;
 		return false;
-	}
-
-	@Override
-	public void operation(Computer comp, String ins) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
 	}
 
 }

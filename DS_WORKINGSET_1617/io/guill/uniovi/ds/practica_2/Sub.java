@@ -7,6 +7,7 @@ public class Sub implements Instruction {
 		int b = new Pop().getValue(comp);
 		int a = new Pop().getValue(comp);
 		new Push(a - b).operation(comp);
+		comp.increaseIP();
 	}
 	
 	@Override
@@ -15,16 +16,4 @@ public class Sub implements Instruction {
 			return true;
 		return false;
 	}
-
-	@Override
-	public void operation(Computer comp, String ins) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void increaseIP(Computer comp) {
-		comp.increaseIP();
-	}
-
 }
