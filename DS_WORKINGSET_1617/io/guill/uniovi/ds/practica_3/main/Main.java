@@ -1,10 +1,14 @@
 package io.guill.uniovi.ds.practica_3.main;
 
 import io.guill.uniovi.ds.practica_3.editor.*;
+import io.guill.uniovi.ds.practica_3.herramientas.Exit;
 
 import java.io.*;
 
 public class Main {
+	
+	private Editor editor;
+	private BufferedReader in;
 
 	public static void main(String[] args) throws IOException {
 		new Main().run();
@@ -15,15 +19,15 @@ public class Main {
 		Editor editor = new Editor(new Dibujo());
 
 		System.out.println("Comandos Herramientas: cuadrado, circulo, triangulo, seleccion");
-		System.out.println("Comandos RatÛn: pinchar x,y / mover x,y / soltar x,y");
+		System.out.println("Comandos Rat√≥n: pinchar x,y / mover x,y / soltar x,y");
 		System.out.println("Otros Comandos: dibujar, exit");
 
 		do {
-			System.out.print(">");
+			System.out.print("> ");
 			String[] line = in.readLine().split("[ ,]");
 
 			if (line[0].equals("exit"))
-				return;
+				new Exit(Exit.NORMAL);
 			if (line[0].equals("cuadrado"))
 				; //	editor.xxx
 			else if (line[0].equals("circulo"))
@@ -47,12 +51,8 @@ public class Main {
 			} else if (line[0].equals("dibujar"))
 				editor.dibujar();
 			else
-				System.out.println("Comando no v·lido");
+				System.out.println("Comando no v√°lido");
 
 		} while (true);
 	}
-
-	private Editor editor;
-	private BufferedReader in;
-
 }
