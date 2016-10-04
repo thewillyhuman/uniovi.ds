@@ -1,9 +1,9 @@
-package io.guill.uniovi.ds.practica_4.formularios;
+package io.guill.uniovi.ds.practica_4.forms;
 
 
 import java.util.*;
 
-import io.guill.uniovi.ds.practica_4.campos.Campo;
+import io.guill.uniovi.ds.practica_4.fields.Campo;
 
 public class Formulario {
 	

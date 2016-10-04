@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_4.campos;
+package io.guill.uniovi.ds.practica_4.fields;
 
 import io.guill.uniovi.ds.practica_4.validators.DigitValidator;
 
@@ -8,8 +8,11 @@ public class CampoNumero extends Campo {
 		super(etiqueta);
 	}
 
+	/**
+	 * @return true if the text is a number. False otherwise.
+	 */
 	@Override
-	protected boolean checkInput() {
+	public boolean checkInput() {
 		return new DigitValidator().validate(texto);
 	}
 }

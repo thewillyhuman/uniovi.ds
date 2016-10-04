@@ -1,7 +1,7 @@
-package io.guill.uniovi.ds.practica_4;
+package io.guill.uniovi.ds.practica_4.core;
 
-import io.guill.uniovi.ds.practica_4.campos.*;
-import io.guill.uniovi.ds.practica_4.formularios.Formulario;
+import io.guill.uniovi.ds.practica_4.fields.*;
+import io.guill.uniovi.ds.practica_4.forms.Formulario;
 
 public class Main {
 

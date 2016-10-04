@@ -3,6 +3,7 @@ package io.guill.uniovi.ds.practica_4.validators;
 public class OptionsValidator implements Validator {
 	
 	String[] valores;
+	
 	public OptionsValidator(String... options) {
 		this.valores = options;
 	}

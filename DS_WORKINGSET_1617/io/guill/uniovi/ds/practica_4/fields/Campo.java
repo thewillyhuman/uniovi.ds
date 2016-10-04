@@ -1,8 +1,6 @@
-package io.guill.uniovi.ds.practica_4.campos;
+package io.guill.uniovi.ds.practica_4.fields;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import io.guill.uniovi.ds.practica_4.core.TextConsoleInterface;
 
 /**
  * Basic field.
@@ -21,21 +19,7 @@ public abstract class Campo {
 	 * Asks for the input through the command line.
 	 */
 	public void pideDato() {
-		BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
-
-		boolean valido;
-		do {
-			valido = false;
-			try {
-				System.out.print(etiqueta + ": ");
-				texto = consola.readLine();
-
-				valido = checkInput();
-
-			} catch (IOException ex) {
-				System.out.println(ex);
-			}
-		} while (!valido);
+		new TextConsoleInterface(this);
 	}
 
 	/**
@@ -46,12 +30,20 @@ public abstract class Campo {
 	public String getString() {
 		return texto;
 	}
+	
+	public String getEtiqueta() {
+		return this.etiqueta;
+	}
+	
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
 
 	/**
 	 * Checks the input of the field.
 	 * 
 	 * @return true if matches, false otherwise.
 	 */
-	protected abstract boolean checkInput();
+	public abstract boolean checkInput();
 
 }

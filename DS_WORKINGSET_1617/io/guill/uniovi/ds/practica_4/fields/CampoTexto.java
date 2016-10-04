@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_4.campos;
+package io.guill.uniovi.ds.practica_4.fields;
 
 import io.guill.uniovi.ds.practica_4.validators.TextValidator;
 
@@ -9,8 +9,11 @@ public class CampoTexto extends Campo {
 		super(etiqueta);
 	}
 
+	/**
+	 * @return true if the text is plain text. False otherwise.
+	 */
 	@Override
-	protected boolean checkInput() {
+	public boolean checkInput() {
 		return new TextValidator().validate(texto);
 	}
 }
