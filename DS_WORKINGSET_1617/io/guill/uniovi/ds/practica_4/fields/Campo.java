@@ -31,10 +31,20 @@ public abstract class Campo {
 		return texto;
 	}
 	
+	/**
+	 * Gives the name of the field.
+	 * 
+	 * @return the name of the field ad a string.
+	 */
 	public String getEtiqueta() {
 		return this.etiqueta;
 	}
 	
+	/**
+	 * Gives the text entered in the field.
+	 * 
+	 * @param texto contained in the filed.
+	 */
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
