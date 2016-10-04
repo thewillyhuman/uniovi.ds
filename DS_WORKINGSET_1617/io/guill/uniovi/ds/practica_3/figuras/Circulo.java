@@ -1,29 +1,29 @@
 package io.guill.uniovi.ds.practica_3.figuras;
+import java.awt.Point;
 
-import io.guill.uniovi.ds.practica_3.editor.Coordinate;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import io.guill.uniovi.ds.practica_3.editor.Figura;
 
-public class Circulo extends Figura {
 
-	private Coordinate origin;
-	private int radius;
+public class Circulo implements Figura {
 
-	@Override
-	public void paint(Coordinate origin) {
-		throw new NotImplementedException();
+	public Circulo(Point centro, int radio) {
+		this.centro = centro;
+		this.radio = radio;
 	}
 
-	@Override
-	public boolean isItMe(Coordinate c) {
-		double distancia = Math.sqrt(Math.pow(c.getX() - this.origin.getX(), 2)
-				+ Math.pow(c.getY() - this.origin.getY(), 2));
-		boolean pinchado = distancia < this.radius;
-		return pinchado;
+	public void dibujar() {
+		System.out.println("C�rculo: centro = " + centro + ", radio = " + radio);
 	}
 
-	@Override
-	protected void displace(int xDis, int yDis) {
-		this.origin.setCoordinate(
-				new Coordinate(origin.getX() + xDis, origin.getY() + yDis));
+	public void mover(int dx, int dy) {
+		centro.translate(dx, dy);
 	}
+
+	public boolean contiene(int x, int y) {
+		double distancia = Math.sqrt(Math.pow(x - centro.x, 2) + Math.pow(y - centro.y, 2));
+		return distancia < radio;
+	}
+
+	private Point centro;
+	private int radio;
 }

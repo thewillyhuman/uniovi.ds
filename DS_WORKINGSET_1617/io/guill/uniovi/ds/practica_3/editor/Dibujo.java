@@ -1,24 +1,23 @@
 package io.guill.uniovi.ds.practica_3.editor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import io.guill.uniovi.ds.practica_3.figuras.Figura;
+import java.util.*;
 
 public class Dibujo {
-	
-	private List<Figura> figuras = new ArrayList<Figura>();
-
-	public void dibujar() {
-		System.out.println("Estoy vacio (por ahora)");
-	}
-	
-	public void addFigura(Figura figura) {
+	public void AddFigura(Figura figura) {
 		figuras.add(figura);
 	}
 	
-	public void deleteFigura(Figura figura) {
-		figuras.remove(figura);
+	public void dibuja() {
+		for (Figura figura : figuras)
+			figura.dibujar();
 	}
 
+	public Figura getFigura(int x, int y) {
+		for (Figura figura : figuras)
+			if (figura.contiene(x, y))
+				return figura;
+		return null;
+	}
+
+	List<Figura> figuras = new ArrayList<Figura>();
 }

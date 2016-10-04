@@ -1,32 +1,32 @@
 package io.guill.uniovi.ds.practica_3.figuras;
 
-import io.guill.uniovi.ds.practica_3.editor.Coordinate;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.awt.*;
+import io.guill.uniovi.ds.practica_3.editor.Figura;
 
-public class Triangulo extends Figura {
 
-	private Coordinate origin, vertex1, vertex2;
+public class Triangulo implements Figura {
 
-	@Override
-	public void paint(Coordinate origin) {
-		throw new NotImplementedException();
+	public Triangulo(Point v1, Point v2, Point v3) {
+		this.v1 = v1;
+		this.v2 = v2;
+		this.v3 = v3;
 	}
 
-	@Override
-	public boolean isItMe(Coordinate c) {
-		if (c.equals(this.origin) || c.equals(vertex1) || c.equals(vertex2))
-			return true;
-		return false;
-	}
-	
-	@Override
-	protected void displace(int xDis, int yDis) {
-		this.origin.setCoordinate(
-				new Coordinate(origin.getX() + xDis, origin.getY() + yDis));
-		vertex1.setCoordinate(
-				new Coordinate(vertex1.getX() + xDis, vertex1.getY() + yDis));
-		vertex2.setCoordinate(
-				new Coordinate(vertex2.getX() + xDis, vertex2.getY() + yDis));
+	public void dibujar() {
+		System.out.println("Triangulo: v1 = " + v1 + ", v2 = " + v2 + ", v3 = " + v3);
 	}
 
+	public void mover(int dx, int dy) {
+		v1.translate(dx, dy);
+		v2.translate(dx, dy);
+		v3.translate(dx, dy);
+	}
+
+	public boolean contiene(int x, int y) {
+		
+		Point posicion = new Point(x,y);
+		return posicion.equals(v1) || posicion.equals(v2) || posicion.equals(v3);
+	}
+
+	private Point v1, v2, v3;
 }

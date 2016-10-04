@@ -1,32 +1,34 @@
 package io.guill.uniovi.ds.practica_3.figuras;
+import java.awt.Point;
 
-import io.guill.uniovi.ds.practica_3.editor.Coordinate;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import io.guill.uniovi.ds.practica_3.editor.Figura;
 
-public class Cuadrado extends Figura {
-	private Coordinate origin;
-	private int ancho, alto;
 
-	@Override
-	public void paint(Coordinate origin) {
-		throw new NotImplementedException();
+public class Cuadrado implements Figura {
+
+	public Cuadrado(Point esquina, int ancho, int alto) {
+		this.esquina = new Point(esquina);
+		this.ancho = ancho;
+		this.alto = alto;
 	}
 
-	@Override
-	public boolean isItMe(Coordinate c) {
-		// int x,y; Coordenadas del lugar donde se ha pinchado el rat�n
-		// Point esquina; int ancho, alto; Atributos del tri�ngulo
-
-		boolean pinchado = (this.origin.getX() <= c.getX()
-				&& c.getX() <= this.origin.getX() + ancho)
-				&& (this.origin.getY() <= c.getY()
-						&& c.getY() <= this.origin.getY() + alto);
-		return pinchado;
+	public Cuadrado(Point inicio, Point fin) {
+		this(inicio, fin.x - inicio.x, fin.y - inicio.y);
 	}
 
-	@Override
-	protected void displace(int xDis, int yDis) {
-		this.origin.setCoordinate(
-				new Coordinate(origin.getX() + xDis, origin.getY() + yDis));
+	public void dibujar() {
+		System.out.println("Cuadrado: x = " + esquina.x + ", y = " + esquina.y + ", ancho = " + ancho + ", alto = " + alto);
 	}
+
+	public void mover(int dx, int dy) {
+		esquina.translate(dx, dy);
+	}
+
+	public boolean contiene(int x, int y) {
+		return (esquina.x <= x && x <= esquina.x + ancho) && (esquina.y <= y && y <= esquina.y + alto);
+	}
+
+	private Point esquina;
+	private int ancho;
+	private int alto;
 }
