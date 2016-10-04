@@ -1,5 +1,7 @@
 package io.guill.uniovi.ds.practica_4;
 
+import io.guill.uniovi.ds.practica_4.campos.*;
+import io.guill.uniovi.ds.practica_4.formularios.Formulario;
 
 public class Main {
 
@@ -8,9 +10,15 @@ public class Main {
 
 		formulario.addCampo(new CampoTexto("Nombre"));
 		formulario.addCampo(new CampoTexto("Apellido"));
-		formulario.addCampo(new CampoNumero("Tel�fono"));
-		formulario.addCampo(new CampoPredefinido("Ciudad", "Santander", "Oviedo", "C�diz"));
-
+		formulario.addCampo(new CampoNumero("Teléfono"));
+		formulario.addCampo(new CampoPredefinido("Ciudad", "Santander", "Oviedo", "Cádiz"));
+		formulario.addCampo(new CampoCodigoProd("Cod. Prod"));
+		formulario.addCampo(new CampoCodigoPostal("Código Postal"));
+		formulario.addCampo(new CampoEdad("Edad"));
+		formulario.addCampo(new CampoSueldo("Sueldo"));
+		formulario.addCampo(new CampoUbicacion("Ubicación",  "Santander", "Oviedo", "Cádiz"));
+		formulario.addCampo(new CampoCodigoPromocion("Promoción"));
+		
 		formulario.PideDatos();
 	}
 }
