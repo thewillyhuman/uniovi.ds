@@ -8,7 +8,6 @@ public interface Instruction {
 	 * @param comp is a socket that shares the hole computer system.
 	 */
 	public void operation(Computer comp);
-	//public void operation(Computer comp, String ins);
 	
 	/**
 	 * Checks if the current operation is the one provided by name.
