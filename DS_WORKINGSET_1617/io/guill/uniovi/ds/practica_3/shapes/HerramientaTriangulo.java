@@ -1,8 +1,9 @@
-package io.guill.uniovi.ds.practica_3.figuras;
+package io.guill.uniovi.ds.practica_3.shapes;
 
 import java.awt.*;
+
 import io.guill.uniovi.ds.practica_3.editor.Editor;
-import io.guill.uniovi.ds.practica_3.herramientas.Herramienta;
+import io.guill.uniovi.ds.practica_3.tools.Herramienta;
 
 public class HerramientaTriangulo implements Herramienta {
 	public HerramientaTriangulo(Editor editor) {

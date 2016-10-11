@@ -1,9 +1,10 @@
-package io.guill.uniovi.ds.practica_3.figuras;
+package io.guill.uniovi.ds.practica_3.shapes;
 
 
 import io.guill.uniovi.ds.practica_3.editor.Editor;
 import io.guill.uniovi.ds.practica_3.editor.Figura;
-import io.guill.uniovi.ds.practica_3.herramientas.HerramientaCreacion;
+import io.guill.uniovi.ds.practica_3.tools.HerramientaCreacion;
+
 import java.awt.Point;
 
 

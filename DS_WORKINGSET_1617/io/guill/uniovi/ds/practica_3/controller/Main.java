@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_3.main;
+package io.guill.uniovi.ds.practica_3.controller;
 import java.io.*;
 
 import io.guill.uniovi.ds.practica_3.editor.Dibujo;

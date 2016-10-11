@@ -1,12 +1,12 @@
-package io.guill.uniovi.ds.practica_3.main;
+package io.guill.uniovi.ds.practica_3.controller;
 
 import java.io.*;
 
 import io.guill.uniovi.ds.practica_3.editor.Editor;
-import io.guill.uniovi.ds.practica_3.figuras.HerramientaCirculo;
-import io.guill.uniovi.ds.practica_3.figuras.HerramientaCuadrado;
-import io.guill.uniovi.ds.practica_3.figuras.HerramientaTriangulo;
-import io.guill.uniovi.ds.practica_3.herramientas.Herramienta;
+import io.guill.uniovi.ds.practica_3.shapes.HerramientaCirculo;
+import io.guill.uniovi.ds.practica_3.shapes.HerramientaCuadrado;
+import io.guill.uniovi.ds.practica_3.shapes.HerramientaTriangulo;
+import io.guill.uniovi.ds.practica_3.tools.Herramienta;
 
 
 public class TextModeInterface {

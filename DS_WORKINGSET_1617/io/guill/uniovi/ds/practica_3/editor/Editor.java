@@ -1,7 +1,7 @@
 package io.guill.uniovi.ds.practica_3.editor;
 
-import io.guill.uniovi.ds.practica_3.herramientas.Herramienta;
-import io.guill.uniovi.ds.practica_3.herramientas.HerramientaSeleccion;
+import io.guill.uniovi.ds.practica_3.tools.Herramienta;
+import io.guill.uniovi.ds.practica_3.tools.HerramientaSeleccion;
 
 public class Editor {
 

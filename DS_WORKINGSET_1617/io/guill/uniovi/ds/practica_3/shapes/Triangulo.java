@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_3.figuras;
+package io.guill.uniovi.ds.practica_3.shapes;
 
 import java.awt.*;
 import io.guill.uniovi.ds.practica_3.editor.Figura;

@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_3.herramientas;
+package io.guill.uniovi.ds.practica_3.tools;
 
 public interface Herramienta {
 	public void pinchar(int x, int y);

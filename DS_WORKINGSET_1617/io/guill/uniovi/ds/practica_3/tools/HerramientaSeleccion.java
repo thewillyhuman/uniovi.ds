@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_3.herramientas;
+package io.guill.uniovi.ds.practica_3.tools;
 
 import java.awt.Point;
 import io.guill.uniovi.ds.practica_3.editor.Editor;
