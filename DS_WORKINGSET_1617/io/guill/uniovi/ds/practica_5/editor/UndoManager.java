@@ -4,6 +4,7 @@ import java.util.List;
 
 public class UndoManager {
 	
+	@SuppressWarnings("unused")
 	private List<Change> changes;
 
 }
