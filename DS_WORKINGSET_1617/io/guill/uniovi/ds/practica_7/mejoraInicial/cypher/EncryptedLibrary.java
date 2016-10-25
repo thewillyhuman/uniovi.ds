@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 public class EncryptedLibrary {
 	
-	private static Hashtable<int, EncryptedString> encryptedStrings = new Hashtable<int, EncryptedString>();
+	private static Hashtable<Integer, EncryptedString> encryptedStrings = new Hashtable<Integer, EncryptedString>();
 	
 	public String getEncryptedString(String original) {
 		if(contains(original))
