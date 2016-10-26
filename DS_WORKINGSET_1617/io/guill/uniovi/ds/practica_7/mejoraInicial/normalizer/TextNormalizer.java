@@ -2,33 +2,28 @@ package io.guill.uniovi.ds.practica_7.mejoraInicial.normalizer;
 
 import io.guill.uniovi.ds.practica_7.mejoraInicial.output.Output;
 
-import java.io.FileWriter;
 import java.io.IOException;
 
-public class TextNormalizer {
+public class TextNormalizer implements Output {
 	
-	public String normalize(String file, CharSequence match) {
-		return file.replace(match, file);
+	private Output output;
+	private CharSequence toReplace, target;
+	
+	public TextNormalizer(Output output,CharSequence target ,CharSequence toReplace) {
+		this.output = output;
+		this.toReplace = toReplace;
+		this.target = target;
 	}
-	
-	public FileWriter toFile(String filename, String file, CharSequence match) {
-		FileWriter filew = null;
-		try {
-			filew = new FileWriter(filename);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		try {
-			filew.append(normalize(file, match));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return filew;
+
+	@Override
+	public void send(String c) throws IOException {
+		System.out.println("Characters before normalizing: " + c.length());
+		output.send(c.replace(target, toReplace));
 	}
-	
-	public Output normalize(Output file, CharSequence pattern) {
-		normalize(file.toString(), pattern);
-		return file;
+
+	@Override
+	public void close() throws IOException {
+		output.close();
 	}
 
 }

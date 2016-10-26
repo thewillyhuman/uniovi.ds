@@ -8,7 +8,7 @@ public class Bluetooth implements Output {
 		stringWriter.append("\n--- START Bluetooth[" + device + "]\n");
 	}
 
-	public void send(char c) throws IOException {
+	public void send(String c) throws IOException {
 		stringWriter.append(c);
 	}
 
