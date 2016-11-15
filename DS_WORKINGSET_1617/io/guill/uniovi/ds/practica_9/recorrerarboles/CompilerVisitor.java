@@ -41,13 +41,8 @@ public class CompilerVisitor implements Visitor {
 
 	@Override
 	public Object visit(Read read, Object param) {
-		System.out.print("Enter a value: ");
-		try {
-			return System.in.read();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} return null;
+		System.out.print("Enter a value for " + read.var.name + " : ");
+		return null;
 	}
 
 	@Override
