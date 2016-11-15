@@ -18,4 +18,8 @@ public class ConstanteInt implements Expresion {
 	public int asInteger() {
 		return Integer.parseInt(valor);
 	}
+	
+	public double asDouble() {
+		return Double.parseDouble(valor);
+	}
 }
