@@ -1,10 +1,5 @@
 package io.guill.uniovi.ds.practica_9.recorrerarboles;
 
-import java.io.IOException;
-
-import com.sun.javafx.binding.IntegerConstant;
-
-import io.guill.uniovi.ds.practica_9.contracts.Expresion;
 import io.guill.uniovi.ds.practica_9.contracts.Sentencia;
 import io.guill.uniovi.ds.practica_9.contracts.Visitor;
 import io.guill.uniovi.ds.practica_9.nodos.Asignacion;
@@ -25,51 +20,65 @@ public class CompilerVisitor implements Visitor {
 			s.accept(this, null);
 		} return null;
 	}
-	
 
 	@Override
 	public Object visit(Print print, Object param) {
+		System.out.print("print ");
 		print.expr.accept(this, null);
+		System.out.println(";");
 		return null;
 	}
 
 	@Override
 	public Object visit(Asignacion asigna, Object param) {
-		asigna.expr = (Expresion) param;
-		return asigna;
+		asigna.expr.accept(this, null);
+		System.out.print(" = ");
+		asigna.expr.accept(this, null);
+		System.out.println(";");
+		return null;
 	}
 
 	@Override
 	public Object visit(Read read, Object param) {
-		System.out.print("Enter a value for " + read.var.name + " : ");
+		System.out.print("read ");
+		read.var.accept(this, null);
+		System.out.println(";");
 		return null;
 	}
 
 	@Override
 	public Object visit(Suma suma, Object param) {
-		return ((ConstanteInt) suma.left.accept(this, null)).asInteger() + ((ConstanteInt) suma.right.accept(this, null)).asInteger();
+		suma.left.accept(this, null);
+		System.out.print(" + ");
+		suma.right.accept(this, null);
+		return null;
 	}
 
 	@Override
 	public Object visit(Division div, Object param) {
-		return ((ConstanteInt) div.left.accept(this, null)).asInteger() / ((ConstanteInt) div.right.accept(this, null)).asInteger();
+		div.left.accept(this, null);
+		System.out.print(" / ");
+		div.right.accept(this, null);
+		return null;
 	}
 
 	@Override
 	public Object visit(Producto prod, Object param) {
-		return ((ConstanteInt) prod.left.accept(this, null)).asInteger() * ((ConstanteInt) prod.right.accept(this, null)).asInteger();
+		prod.left.accept(this, null);
+		System.out.print(" * ");
+		prod.right.accept(this, null);
+		return null;
 	}
 
 	@Override
 	public Object visit(Variable var, Object param) {
-		System.out.println(var.name);
-		return var;
+		System.out.print(var.name);
+		return null;
 	}
 
 	@Override
 	public Object visit(ConstanteInt cte, Object param) {
-		System.out.println(cte);
-		return cte;
+		System.out.print(cte.valor);
+		return null;
 	}
-
 }
