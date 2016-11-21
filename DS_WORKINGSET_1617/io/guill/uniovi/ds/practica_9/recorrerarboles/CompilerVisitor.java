@@ -1,5 +1,8 @@
 package io.guill.uniovi.ds.practica_9.recorrerarboles;
 
+import java.io.*;
+import java.util.HashMap;
+
 import io.guill.uniovi.ds.practica_9.contracts.Sentencia;
 import io.guill.uniovi.ds.practica_9.contracts.Visitor;
 import io.guill.uniovi.ds.practica_9.nodos.Asignacion;
@@ -13,72 +16,74 @@ import io.guill.uniovi.ds.practica_9.nodos.Suma;
 import io.guill.uniovi.ds.practica_9.nodos.Variable;
 
 public class CompilerVisitor implements Visitor {
-	
-	@Override
-	public Object visit(Programa p, Object param) {
-		for(Sentencia s : p.sentencias) {
-			s.accept(this, null);
-		} return null;
-	}
+	BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+	private HashMap<String, Integer> memory = new HashMap<>();
 
 	@Override
-	public Object visit(Print print, Object param) {
-		System.out.print("print ");
-		print.expr.accept(this, null);
-		System.out.println(";");
+	public Object visit(Programa program, Object param) {
+		for (Sentencia statement : program.sentencias) {
+			statement.accept(this, null);
+		}
 		return null;
 	}
 
 	@Override
-	public Object visit(Asignacion asigna, Object param) {
-		asigna.expr.accept(this, null);
-		System.out.print(" = ");
-		asigna.expr.accept(this, null);
-		System.out.println(";");
+	public Object visit(Asignacion assignment, Object param) {
+		int value = (int) assignment.expr.accept(this, null);
+		memory.put(assignment.variable.name, value);
 		return null;
 	}
 
 	@Override
 	public Object visit(Read read, Object param) {
-		System.out.print("read ");
-		read.var.accept(this, null);
-		System.out.println(";");
+		while (true) {
+			try {
+				System.out.print(read.var.name + ": ");
+				int value = Integer.parseInt(console.readLine());
+				memory.put(read.var.name, value);
+				return null;
+			} catch (NumberFormatException e) {
+				System.out.println("Has de introducir un valor entero");
+			} catch (IOException e) {
+				System.out.println("Se produjo un error al leer el valor de la variable");
+			}
+		}
+	}
+
+	@Override
+	public Object visit(Print print, Object param) {
+		System.out.println(print.expr.accept(this, null));
 		return null;
 	}
 
 	@Override
-	public Object visit(Suma suma, Object param) {
-		suma.left.accept(this, null);
-		System.out.print(" + ");
-		suma.right.accept(this, null);
-		return null;
+	public Object visit(Suma sum, Object param) {
+		int leftValue = (int) sum.left.accept(this, null);
+		int rightValue = (int) sum.right.accept(this, null);
+		return leftValue + rightValue;
 	}
 
 	@Override
-	public Object visit(Division div, Object param) {
-		div.left.accept(this, null);
-		System.out.print(" / ");
-		div.right.accept(this, null);
-		return null;
+	public Object visit(Producto product, Object param) {
+		int leftValue = (int) product.left.accept(this, null);
+		int rightValue = (int) product.right.accept(this, null);
+		return leftValue * rightValue;
 	}
 
 	@Override
-	public Object visit(Producto prod, Object param) {
-		prod.left.accept(this, null);
-		System.out.print(" * ");
-		prod.right.accept(this, null);
-		return null;
+	public Object visit(Division division, Object param) {
+		int leftValue = (int) division.left.accept(this, null);
+		int rightValue = (int) division.right.accept(this, null);
+		return leftValue / rightValue;
 	}
 
 	@Override
-	public Object visit(Variable var, Object param) {
-		System.out.print(var.name);
-		return null;
+	public Object visit(ConstanteInt number, Object param) {
+		return (int) Integer.parseInt(number.valor);
 	}
 
 	@Override
-	public Object visit(ConstanteInt cte, Object param) {
-		System.out.print(cte.valor);
-		return null;
+	public Object visit(Variable variable, Object param) {
+		return memory.get(variable.name);
 	}
 }
