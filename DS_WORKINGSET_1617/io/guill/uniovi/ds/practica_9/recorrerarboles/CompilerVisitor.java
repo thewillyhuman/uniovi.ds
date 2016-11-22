@@ -1,9 +1,5 @@
 package io.guill.uniovi.ds.practica_9.recorrerarboles;
 
-import java.io.IOException;
-
-import com.sun.javafx.binding.IntegerConstant;
-
 import io.guill.uniovi.ds.practica_9.contracts.Expresion;
 import io.guill.uniovi.ds.practica_9.contracts.Sentencia;
 import io.guill.uniovi.ds.practica_9.contracts.Visitor;
