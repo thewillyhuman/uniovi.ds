@@ -19,5 +19,4 @@ public class WindowsAPI extends Platform {
 		System.out.println("(Windows) Dibujando '" + image.getName() + "' en [" + point.x + "," + point.y + "]");
 		
 	}
-
 }

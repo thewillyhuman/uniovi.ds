@@ -20,5 +20,4 @@ public abstract class Platform implements PlatformAPI {
 		point.translate(10, 10);
 		return new Point(point);
 	}
-
 }
