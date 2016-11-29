@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica_11.platform;
+package io.guill.uniovi.ds.practica_11.adapter.platform;
 
 
 public class Image2D {
