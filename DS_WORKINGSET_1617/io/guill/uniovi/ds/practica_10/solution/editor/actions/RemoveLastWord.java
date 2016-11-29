@@ -1,6 +1,8 @@
-package editor.actions;
+package io.guill.uniovi.ds.practica_10.solution.editor.actions;
 
-import editor.Editor;
+import io.guill.uniovi.ds.practica_10.solution.editor.Editor;
+
+
 
 public class RemoveLastWord implements Action
 {

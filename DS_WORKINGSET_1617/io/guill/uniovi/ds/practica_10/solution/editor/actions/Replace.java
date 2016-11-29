@@ -1,8 +1,9 @@
-package editor.actions;
+package io.guill.uniovi.ds.practica_10.solution.editor.actions;
+
+import io.guill.uniovi.ds.practica_10.solution.editor.Editor;
 
 import java.util.regex.Pattern;
 
-import editor.Editor;
 
 public class Replace implements Action
 {

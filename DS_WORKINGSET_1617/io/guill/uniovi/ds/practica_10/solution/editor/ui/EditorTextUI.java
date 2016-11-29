@@ -1,9 +1,9 @@
-package editor.ui;
+package io.guill.uniovi.ds.practica_10.solution.editor.ui;
+
+import io.guill.uniovi.ds.practica_10.solution.editor.Editor;
 
 import java.io.*;
 import java.util.Arrays;
-
-import editor.Editor;
 
 public class EditorTextUI 
 {

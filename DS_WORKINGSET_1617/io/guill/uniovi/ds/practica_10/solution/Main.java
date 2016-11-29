@@ -1,7 +1,9 @@
-import java.io.*;
+package io.guill.uniovi.ds.practica_10.solution;
 
-import editor.Editor;
-import editor.ui.EditorTextUI;
+import io.guill.uniovi.ds.practica_10.solution.editor.Editor;
+import io.guill.uniovi.ds.practica_10.solution.editor.ui.EditorTextUI;
+
+import java.io.*;
 
 public class Main 
 {

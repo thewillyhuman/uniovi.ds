@@ -1,10 +1,10 @@
-package editor;
+package io.guill.uniovi.ds.practica_10.solution.editor;
+
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.Action;
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.Macro;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import editor.actions.Action;
-import editor.actions.Macro;
 
 public class ActionManager 
 {

@@ -1,6 +1,9 @@
-package editor;
+package io.guill.uniovi.ds.practica_10.solution.editor;
 
-import editor.actions.*;
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.Insert;
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.Open;
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.RemoveLastWord;
+import io.guill.uniovi.ds.practica_10.solution.editor.actions.Replace;
 
 public class Editor 
 {

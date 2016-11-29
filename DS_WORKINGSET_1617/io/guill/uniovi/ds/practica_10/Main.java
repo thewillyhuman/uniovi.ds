@@ -5,19 +5,15 @@ import io.guill.uniovi.ds.practica_10.actions.Abre;
 import io.guill.uniovi.ds.practica_10.actions.Borra;
 import io.guill.uniovi.ds.practica_10.actions.Inserta;
 import io.guill.uniovi.ds.practica_10.actions.Reemplaza;
-import io.guill.uniovi.ds.practica_10.tasks.Execute;
 import io.guill.uniovi.ds.practica_10.tasks.Graba;
-import io.guill.uniovi.ds.practica_10.tasks.Parar;
 
 import java.io.*;
-import java.util.regex.*;
-
-import sun.text.resources.cldr.sr.FormatData_sr_Cyrl_BA;
 
 public class Main 
 {
 	private static BufferedReader in;
 	private static StringBuilder texto;
+	@SuppressWarnings("unused")
 	private static Graba graba;
 
 	public static void main(String[] args) throws IOException 

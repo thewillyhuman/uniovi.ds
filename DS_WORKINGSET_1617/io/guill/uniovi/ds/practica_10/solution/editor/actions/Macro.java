@@ -1,8 +1,9 @@
-package editor.actions;
+package io.guill.uniovi.ds.practica_10.solution.editor.actions;
+
+import io.guill.uniovi.ds.practica_10.solution.editor.Editor;
 
 import java.util.*;
 
-import editor.Editor;
 
 public class Macro implements Action
 {
