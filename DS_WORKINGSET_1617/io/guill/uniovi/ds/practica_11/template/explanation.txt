@@ -1,1 +1,9 @@
 Explicación del patrón template...
+
+Tenemos una interfáz PlatformAPI.java que define un contrato para todas aquellas clases que vayan a representar a una plataforma.
+Tb encontramos una clase abstracta Platform.java que implementa aquellos métodos requeridos por la interfáz, implmentando en detalle
+aquellos cuya implementación en detalle es común. Por la contra los métodos que requieran una implementación específica por plataforma
+serán definidos como abstractos. Finalmente se modifica el juego para que reciba una plataforma que herede de Platform.java por lo que
+se pueda ejecutar para cualquier plataforma sin tener que modificar el juego.
+
+En el caso de tener que implementar un nuevo juego el template tendría que implementar todo el código para cada api.
