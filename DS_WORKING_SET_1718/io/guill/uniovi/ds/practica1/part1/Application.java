@@ -1,4 +1,4 @@
-package practica1;
+package io.guill.uniovi.ds.practica1.part1;
 
 public class Application {
 
