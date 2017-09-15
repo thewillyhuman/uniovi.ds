@@ -1,6 +1,15 @@
 package io.guill.uniovi.ds.practica1.part2;
 
-public class ChildrenMovie implements MovieType {
+/**
+ * ChildrenMovie.java
+ *
+ * @author willy
+ * @version 201709151411
+ * @since 15/09/2017
+ * @formatter Oviedo Computing Community
+ * @implements IMovieType
+ */
+public class ChildrenMovie implements IMovieType {
 	
 	@Override
 	public double getPrice(int days) {

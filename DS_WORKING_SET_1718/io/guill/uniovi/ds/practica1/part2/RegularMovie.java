@@ -1,6 +1,15 @@
 package io.guill.uniovi.ds.practica1.part2;
 
-public class RegularMovie implements MovieType {
+/**
+ * RegularMovie.java
+ *
+ * @author willy
+ * @version 201709151412
+ * @since 15/09/2017
+ * @formatter Oviedo Computing Community
+ * @implements IMovieType
+ */
+public class RegularMovie implements IMovieType {
 
 	@Override
 	public double getPrice(int daysRented) {

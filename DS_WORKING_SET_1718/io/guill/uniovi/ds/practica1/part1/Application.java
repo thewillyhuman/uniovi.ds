@@ -1,5 +1,13 @@
 package io.guill.uniovi.ds.practica1.part1;
 
+/**
+ * Application.java
+ *
+ * @author willy
+ * @version 201709151413
+ * @since 201709151413
+ * @formatter Oviedo Computing Community
+ */
 public class Application {
 
 	public static void main(String[] args) {

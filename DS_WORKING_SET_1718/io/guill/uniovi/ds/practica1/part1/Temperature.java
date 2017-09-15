@@ -1,5 +1,13 @@
 package io.guill.uniovi.ds.practica1.part1;
 
+/**
+ * Temperature.java
+ *
+ * @author willy
+ * @version 201709151414
+ * @since 201709151414
+ * @formatter Oviedo Computing Community
+ */
 public class Temperature {
 
 	/**

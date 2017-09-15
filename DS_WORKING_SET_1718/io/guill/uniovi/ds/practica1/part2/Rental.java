@@ -1,7 +1,12 @@
 package io.guill.uniovi.ds.practica1.part2;
 
 /**
- * Esta clase representa el alquiler de una película por parte de un cliente.
+ * Rental.java
+ *
+ * @author willy
+ * @version 201709151425
+ * @since 15/09/2017
+ * @formatter Oviedo Computing Community
  */
 public class Rental {
 
@@ -19,7 +24,7 @@ public class Rental {
 	 * @return the number of days of the rental.
 	 */
 	public int getDays() {
-		return days;
+		return this.days;
 	}
 
 	/**
@@ -28,7 +33,7 @@ public class Rental {
 	 * @return the movie of the rental.
 	 */
 	public Movie getMovie() {
-		return movie;
+		return this.movie;
 	}
 
 	/**
@@ -37,7 +42,7 @@ public class Rental {
 	 * @return the number of point given with the rental.
 	 */
 	public int getPoints() {
-		return movie.getPoints(days);
+		return this.movie.getPoints(days);
 	}
 
 	/**
@@ -46,6 +51,6 @@ public class Rental {
 	 * @return the price of the rental.
 	 */
 	public double getPrice() {
-		return movie.getPrice(days);
+		return this.movie.getPrice(days);
 	}
 }

@@ -3,6 +3,14 @@ package io.guill.uniovi.ds.practica1.part2;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Customer.java
+ *
+ * @author willy
+ * @version 201709151406
+ * @since 15/09/2017
+ * @formatter Oviedo Computing Community
+ */
 public class Customer {
 
 	private String name;
@@ -23,7 +31,7 @@ public class Customer {
 	 * @param rental to be added to the customer.
 	 */
 	public void addRental(Rental rental) {
-		rentals.add(rental);
+		this.rentals.add(rental);
 	}
 
 	/**
@@ -32,7 +40,7 @@ public class Customer {
 	 * @return the name of the customer.
 	 */
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/**
@@ -43,7 +51,7 @@ public class Customer {
 	public String status() {
 		double totalPrice = 0;
 		int totalPoints = 0;
-		String result = "Rental Record for " + getName() + "\n";
+		String result = "Rental Record for " + this.getName() + "\n";
 
 		for (Rental rental : rentals) {
 			totalPrice += rental.getPrice();
