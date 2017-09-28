@@ -1,6 +1,4 @@
-package io.guill.uniovi.ds.practica2.instructions;
-
-import io.guill.uniovi.ds.practica2.Computer;
+package io.guill.uniovi.ds.practica2;
 
 public class Main {
 
