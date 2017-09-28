@@ -10,14 +10,6 @@ public class CompIP {
 	public void increase() {
 		this.ip++;
 	}
-	
-	/**
-	 * Decreases the IP in one unit.
-	 */
-	public void decrease() {
-		this.ip++;
-	}
-	
 	/**
 	 * @param value is the new value for the IP.
 	 */

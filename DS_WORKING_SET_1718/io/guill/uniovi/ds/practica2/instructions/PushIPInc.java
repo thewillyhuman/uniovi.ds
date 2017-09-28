@@ -1,13 +1,16 @@
 package io.guill.uniovi.ds.practica2.instructions;
 
 import io.guill.uniovi.ds.practica2.Computer;
-import io.guill.uniovi.ds.practica2.IInstruction;
 
-public class Output implements IInstruction {
+public class PushIPInc extends Push {
+	
+	public PushIPInc(int value) {
+		super(value);
+	}
 
 	@Override
 	public void operation(Computer comp) {
-		System.out.println(new Pop().value(comp));
+		comp.stack().push(super.value);
 		new IncreaseIP().operation(comp);
 	}
 

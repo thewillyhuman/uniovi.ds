@@ -5,16 +5,12 @@ import io.guill.uniovi.ds.practica2.IInstruction;
 import io.guill.uniovi.ds.practica2.IOHelper;
 
 public class Input implements IInstruction {
-	
-	public Input(Computer comp) {
-		operation(comp);
-		increaseIP(comp);
-	}
 
 	@Override
 	public void operation(Computer comp) {
 		System.out.println("Escriba un entero:");
-		comp.stack().push(new IOHelper(comp).terminal().nextInt());
+		new Push(new IOHelper(comp).terminal().nextInt()).operation(comp);
+		new IncreaseIP().operation(comp);
 	}
 
 }

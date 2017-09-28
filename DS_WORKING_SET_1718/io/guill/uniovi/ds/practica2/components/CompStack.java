@@ -18,9 +18,9 @@ public class CompStack extends Stack<Integer> {
 	 * @param element to push on to the top of the stack.
 	 */
 	public void push(int element) {
-		if(super.size() >= MAX_CAPACITY) {
+		/*if(super.size() >= MAX_CAPACITY) {
 			throw new StackOverflowError();
-		}
+		}*/
 		super.push(element);
 	}
 

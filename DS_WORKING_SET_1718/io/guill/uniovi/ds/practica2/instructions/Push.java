@@ -5,18 +5,15 @@ import io.guill.uniovi.ds.practica2.IInstruction;
 
 public class Push implements IInstruction {
 	
-	private int value;
+	int value;
 	
-	public Push(Computer comp, int value) {
+	public Push(int value) {
 		this.value = value;
-		operation(comp);
-		increaseIP(comp);
 	}
 
 	@Override
 	public void operation(Computer comp) {
 		comp.stack().push(value);
-		comp.sp().increase();
 	}
 
 }

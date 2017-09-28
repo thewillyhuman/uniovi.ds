@@ -8,14 +8,12 @@ public class Computer {
 	private CompIP ip = null; 
 	private CompMemory memory = null;
 	private CompStack stack = null;
-	private CompSP sp = null;
 	private Program program = null;
 	
 	public Computer() {
 		this.ip = new CompIP();
 		this.memory = new CompMemory();
 		this.stack = new CompStack();
-		this.sp = new CompSP();
 		this.program = new Program();
 		
 		try {
@@ -24,7 +22,7 @@ public class Computer {
 			System.err.println("Error while loading the program.");
 			e.printStackTrace();
 		}
-		
+		System.out.println(program.self().size());
 		new ExecuteProgram(this, program);
 	}
 	
@@ -53,15 +51,6 @@ public class Computer {
 	 */
 	public CompStack stack() {
 		return this.stack;
-	}
-	
-	/**
-	 * Gives the SP.
-	 * 
-	 * @return the SP component.
-	 */
-	public CompSP sp() {
-		return this.sp;
 	}
 	
 	/**

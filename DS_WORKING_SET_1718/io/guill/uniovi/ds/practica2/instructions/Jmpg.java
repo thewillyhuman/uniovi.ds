@@ -7,19 +7,18 @@ public class Jmpg implements IInstruction {
 	
 	private int address;
 	
-	public Jmpg(Computer comp, int address) {
+	public Jmpg(int address) {
 		this.address = address;
-		operation(comp);
 	}
 
 	@Override
 	public void operation(Computer comp) {
-		int b = comp.stack().pop();
-		int a = comp.stack().pop();
+		int b = new Pop().value(comp);
+		int a = new Pop().value(comp);
 		if (a > b) {
-			comp.ip().set(address);
+			new Jmp(address).operation(comp);
 		} else {
-			increaseIP(comp);
+			new IncreaseIP().operation(comp);
 		}
 	}
 
