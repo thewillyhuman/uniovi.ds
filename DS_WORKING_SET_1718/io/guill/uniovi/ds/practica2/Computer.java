@@ -1,7 +1,6 @@
 package io.guill.uniovi.ds.practica2;
 
 import java.io.IOException;
-
 import io.guill.uniovi.ds.practica2.components.*;
 
 public class Computer {
@@ -29,22 +28,47 @@ public class Computer {
 		new ExecuteProgram(this, program);
 	}
 	
+	/**
+	 * Gives the IP.
+	 * 
+	 * @return the IP component.
+	 */
 	public CompIP ip() {
 		return this.ip;
 	}
 	
+	/**
+	 * Gives the memory.
+	 * 
+	 * @return the memory component.
+	 */
 	public CompMemory memory() {
 		return this.memory;
 	}
 	
+	/**
+	 * Gives access to the stack.
+	 * 
+	 * @return the stack component.
+	 */
 	public CompStack stack() {
 		return this.stack;
 	}
 	
+	/**
+	 * Gives the SP.
+	 * 
+	 * @return the SP component.
+	 */
 	public CompSP sp() {
 		return this.sp;
 	}
 	
+	/**
+	 * Gives the program.
+	 * 
+	 * @return the program.
+	 */
 	public Program program() {
 		return this.program;
 	}

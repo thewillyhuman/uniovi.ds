@@ -1,17 +1,7 @@
 package io.guill.uniovi.ds.practica2;
 
 import java.util.List;
-
-import io.guill.uniovi.ds.practica2.instructions.Add;
-import io.guill.uniovi.ds.practica2.instructions.Input;
-import io.guill.uniovi.ds.practica2.instructions.Jmp;
-import io.guill.uniovi.ds.practica2.instructions.Jmpg;
-import io.guill.uniovi.ds.practica2.instructions.Load;
-import io.guill.uniovi.ds.practica2.instructions.Mul;
-import io.guill.uniovi.ds.practica2.instructions.Output;
-import io.guill.uniovi.ds.practica2.instructions.Push;
-import io.guill.uniovi.ds.practica2.instructions.Store;
-import io.guill.uniovi.ds.practica2.instructions.Sub;
+import io.guill.uniovi.ds.practica2.instructions.*;
 
 public class ExecuteProgram {
 	
@@ -20,13 +10,14 @@ public class ExecuteProgram {
 	}
 
 	/**
+	 * Runs a the given program in the given computer.
 	 * 
-	 * @param comp
-	 * @param instrucciones
+	 * @param comp is the computer where the program will run.
+	 * @param instructions are the set of instructions to run.
 	 */
-	private void run(Computer comp, List<String[]> instrucciones) {
-		while (comp.ip().self() < instrucciones.size()) {
-			String[] instruccion = instrucciones.get(comp.ip().self());
+	private void run(Computer comp, List<String[]> instructions) {
+		while (comp.ip().self() < instructions.size()) {
+			String[] instruccion = instructions.get(comp.ip().self());
 			
 			if (instruccion[0].equals("push")) {
 				new Push(comp, Integer.parseInt(instruccion[1]));

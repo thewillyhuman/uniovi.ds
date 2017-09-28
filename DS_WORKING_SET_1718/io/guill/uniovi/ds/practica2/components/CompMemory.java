@@ -6,6 +6,7 @@ public class CompMemory {
 	private int[] space = new int[DEFAULT_CAPACITY];
 	
 	/**
+	 * Sets a value in the given address of the memory.
 	 * 
 	 * @param address in memory where to place the element.
 	 * @param value to place in the address provided.
@@ -17,9 +18,10 @@ public class CompMemory {
 	}
 	
 	/**
+	 * Gives the value placed in the address given.
 	 * 
-	 * @param address
-	 * @return
+	 * @param address of the element we want to get.
+	 * @return the element placed in the address provided.
 	 */
 	public int valueAt(int address) {
 		return this.space[address];

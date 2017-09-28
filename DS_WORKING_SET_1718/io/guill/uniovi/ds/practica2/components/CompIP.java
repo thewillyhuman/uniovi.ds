@@ -19,11 +19,10 @@ public class CompIP {
 	}
 	
 	/**
-	 * 
-	 * @param address
+	 * @param value is the new value for the IP.
 	 */
-	public void set(int address) {
-		this.ip = address;
+	public void set(int value) {
+		this.ip = value;
 	}
 	
 	/**
