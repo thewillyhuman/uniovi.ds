@@ -1,4 +1,4 @@
-package io.guill.uniovi.ds.practica2;
+package io.guill.uniovi.ds.practica2.components;
 
 public class CompMemory {
 

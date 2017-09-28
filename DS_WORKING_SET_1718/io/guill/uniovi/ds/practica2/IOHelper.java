@@ -5,11 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IODevice {
+public class IOHelper {
 
 	private Computer comp;
 	
-	public IODevice(Computer comp) {
+	public IOHelper(Computer comp) {
 		this.comp = comp;
 	}
 	
@@ -18,12 +18,12 @@ public class IODevice {
 	 * 
 	 * @throws IOException if there's any problem while loading the file.
 	 */
-	void loadProgram(String file) throws IOException {
+	public void loadProgram(String file) throws IOException {
 		BufferedReader fichero = new BufferedReader(new FileReader(file));
 
 		String linea;
 		while ((linea = fichero.readLine()) != null)
-			comp.loadInstruction(linea);
+			comp.program().loadInstruction(linea);
 		fichero.close();
 	}
 	
@@ -32,7 +32,7 @@ public class IODevice {
 	 * 
 	 * @return the terminal screen waiting for an input.
 	 */
-	Scanner terminal() {
+	public Scanner terminal() {
 		return new Scanner(System.in);
 	}
 }
