@@ -26,15 +26,9 @@ public class TriangleTool implements ITool {
 	}
 
 	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-
-	}
+	public void move(int x, int y) { }
 
 	@Override
-	public void release(int x, int y) {
-		// TODO Auto-generated method stub
-
-	}
+	public void release(int x, int y) { }
 
 }
