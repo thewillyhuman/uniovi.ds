@@ -6,11 +6,11 @@ import io.guill.uniovi.ds.practica4.validators.IValidator;
 public class Field {
 
 	protected String name, content;
-	protected IValidator[] validators;
+	protected IValidator validator;
 
-	public Field(String name, IValidator... validators) {
+	public Field(String name, IValidator validator) {
 		this.name = name;
-		this.validators = validators;
+		this.validator = validator;
 	}
 	
 	public String name() {
@@ -42,11 +42,6 @@ public class Field {
 	 * @return true if matches, false otherwise.
 	 */
 	public boolean validate() {
-		for(IValidator validator : validators) {
-			if(!validator.validate(content)) {
-				return false;
-			}
-		}
-		return true;
+		return this.validator.validate(content);
 	}
 }
