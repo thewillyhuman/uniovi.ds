@@ -1,13 +1,24 @@
 package io.guill.uniovi.ds.practica4.fields;
 
 import io.guill.uniovi.ds.practica4.TerminalInput;
+import io.guill.uniovi.ds.practica4.validators.IValidator;
 
-public abstract class Field {
+public class Field {
 
 	protected String name, content;
+	protected IValidator[] validators;
 
-	public Field(String etiqueta) {
-		this.name = etiqueta;
+	public Field(String name, IValidator... validators) {
+		this.name = name;
+		this.validators = validators;
+	}
+	
+	public String name() {
+		return this.name;
+	}
+	
+	public void name(String name) {
+		this.name = name;
 	}
 
 	/**
@@ -16,32 +27,13 @@ public abstract class Field {
 	public void input() {
 		new TerminalInput(this);
 	}
-
-	/**
-	 * Returns the string of the input.
-	 * 
-	 * @return string of the input.
-	 */
+	
 	public String content() {
 		return content;
 	}
-
-	/**
-	 * Gives the name of the field.
-	 * 
-	 * @return the name of the field ad a string.
-	 */
-	public String name() {
-		return this.name;
-	}
-
-	/**
-	 * Gives the text entered in the field.
-	 * 
-	 * @param texto contained in the filed.
-	 */
-	public void name(String texto) {
-		this.content = texto;
+	
+	public void content(String content) {
+		this.content = content;
 	}
 
 	/**
@@ -49,5 +41,12 @@ public abstract class Field {
 	 * 
 	 * @return true if matches, false otherwise.
 	 */
-	public abstract boolean checkInput();
+	public boolean validate() {
+		for(IValidator validator : validators) {
+			if(!validator.validate(content)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

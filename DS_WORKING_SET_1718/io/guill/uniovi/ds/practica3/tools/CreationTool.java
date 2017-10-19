@@ -23,11 +23,11 @@ public abstract class CreationTool implements ITool {
 
 	public void release(int x, int y) {
 		second = new Point(x, y);
-		IShape shape = doCreaFigura(first, second);
+		IShape shape = create(first, second);
 		editor.canvas().addShape(shape);
 		editor.terminateTool();
 	}
 	
-	protected abstract IShape doCreaFigura(Point first, Point second);
+	protected abstract IShape create(Point first, Point second);
 
 }

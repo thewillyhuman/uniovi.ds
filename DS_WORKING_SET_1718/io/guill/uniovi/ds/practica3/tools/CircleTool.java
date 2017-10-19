@@ -13,7 +13,7 @@ public class CircleTool extends CreationTool {
 	}
 
 	@Override
-	protected IShape doCreaFigura(Point first, Point second) {
+	protected IShape create(Point first, Point second) {
 		Point centro = new Point((first.x + second.x) / 2, (first.y + second.y) / 2);
 		int radio = Math.max(second.x - first.x, second.y - first.y) / 2;
 		return new Circle(centro, radio);

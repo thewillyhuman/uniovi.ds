@@ -13,7 +13,7 @@ public class RectangleTool extends CreationTool {
 	}
 
 	@Override
-	protected IShape doCreaFigura(Point first, Point second) {
+	protected IShape create(Point first, Point second) {
 		return new Rectangle(first, second);
 	}
 

@@ -15,8 +15,8 @@ public class TerminalInput {
 			valid = false;
 			try {
 				System.out.print(campo.name() + ": ");
-				campo.name(terminal.readLine());
-				valid = campo.checkInput();
+				campo.content(terminal.readLine());
+				valid = campo.validate();
 			} catch (IOException ex) {
 				System.out.println(ex);
 			}
