@@ -24,5 +24,12 @@ public interface IShape {
 	 * @return
 	 */
 	public boolean contains(int x, int y);
+	
+	/**
+	 * Clones the object.
+	 * 
+	 * @return and exact copy of the object.
+	 */
+	public IShape clone();
 
 }

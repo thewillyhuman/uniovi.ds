@@ -50,6 +50,10 @@ public class TextInterface {
 				editor.release(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
 			else if (line[0].equals("dibujar"))
 				editor.dibujar();
+			else if (line[0].equals("deshacer"))
+				new UndoTool(editor).undo();
+			else if (line[0].equals("rehacer"))
+				new RedoTool(editor).redo();
 			else
 				System.out.println("Order not found # Error 404 JEJEJE");
 

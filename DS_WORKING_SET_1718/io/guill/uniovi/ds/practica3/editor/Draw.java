@@ -27,5 +27,17 @@ public class Draw {
 	public List<IShape> shapes() {
 		return this.shapes;
 	}
+	
+	public void shapes(List<IShape> shapes) {
+		this.shapes = shapes;
+	}
+	
+	public List<IShape> clone() {
+		List<IShape> aux = new ArrayList<IShape>();
+		for(IShape shape : shapes) {
+			aux.add(shape.clone());
+		}
+		return aux;
+	}
 
 }

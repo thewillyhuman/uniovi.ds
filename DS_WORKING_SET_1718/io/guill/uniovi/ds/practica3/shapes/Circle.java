@@ -31,5 +31,9 @@ public class Circle implements IShape {
 		double distancia = Math.sqrt(Math.pow(x - center.x, 2) + Math.pow(y - center.y, 2));
 		return distancia < radious;
 	}
+	
+	public IShape clone() {
+		return new Circle(this.center, this.radious);
+	}
 
 }

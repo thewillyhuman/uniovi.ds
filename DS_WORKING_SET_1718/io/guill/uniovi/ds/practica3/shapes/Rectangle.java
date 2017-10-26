@@ -50,5 +50,9 @@ public class Rectangle implements IShape {
 	public boolean contains(int x, int y) {
 		return (origin.x <= x && x <= origin.x + width) && (origin.y <= y && y <= origin.y + height);
 	}
+	
+	public IShape clone() {
+		return new Rectangle(this.origin, this.width, this.height);
+	}
 
 }

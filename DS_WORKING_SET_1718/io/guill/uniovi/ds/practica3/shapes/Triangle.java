@@ -34,5 +34,9 @@ public class Triangle implements IShape {
 		Point posicion = new Point(x,y);
 		return posicion.equals(v1) || posicion.equals(v2) || posicion.equals(v3);
 	}
+	
+	public IShape clone() {
+		return new Triangle(this.v1, this.v2, this.v3);
+	}
 
 }
