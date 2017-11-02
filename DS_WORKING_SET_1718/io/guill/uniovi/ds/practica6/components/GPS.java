@@ -2,10 +2,6 @@ package io.guill.uniovi.ds.practica6.components;
 
 public class GPS {
 	
-	public final static GPS instance = new GPS();
-
-	private GPS() { }
-	
 	public void navigate(String address) {
 		System.out.println("GPS: Gire a la derecha. Ha llegado a '" + address + "'");
 	}

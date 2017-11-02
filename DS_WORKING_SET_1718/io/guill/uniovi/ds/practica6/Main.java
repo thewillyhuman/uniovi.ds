@@ -1,26 +1,26 @@
 package io.guill.uniovi.ds.practica6;
 
+import io.guill.uniovi.ds.practica6.MapKit.*;
 import io.guill.uniovi.ds.practica6.model.*;
-import io.guill.uniovi.ds.practica6.views.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		MapView map = new MapView();
+		MKMapView map = new MKMapView();
 
 		// 1. Meter elementos en el mapa
 		System.out.println("\n 1. Metiendo elementos en el mapa");
 		for (Monument monumento : Database.instance.monuments()) {
-			 map.add(new MonumentMapElement(monumento));
+			 map.add(new MKMonumentItem(monumento));
 		}
 
 		for (Photo foto : Database.instance.photos()) {
-			 map.add(new PhotoMapElement(foto));
+			 map.add(new MKPhotoItem(foto));
 		}
 
 		for (Restaurant restaurante : Database.instance.restaurants()) {
-			 map.add(new RestaurantMapElement(restaurante));
+			 map.add(new MKRestaurantItem(restaurante));
 		}
 		
 

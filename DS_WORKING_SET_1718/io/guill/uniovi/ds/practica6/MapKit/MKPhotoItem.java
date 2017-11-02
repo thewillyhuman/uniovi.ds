@@ -1,28 +1,28 @@
-package io.guill.uniovi.ds.practica6.views;
+package io.guill.uniovi.ds.practica6.MapKit;
 
 import io.guill.uniovi.ds.practica6.components.Coordinates;
 import io.guill.uniovi.ds.practica6.model.Photo;
 
-public class PhotoMapElement implements MapElement {
+public class MKPhotoItem implements MKMapItem {
 
 	private Photo photo;
 
-	public PhotoMapElement(Photo photo) {
+	public MKPhotoItem(Photo photo) {
 		this.photo = photo;
 	}
 
 	@Override
-	public String getTitle() {
+	public String placemark() {
 		return this.photo.getDescription();
 	}
 
 	@Override
-	public Coordinates getCoordinates() {
+	public Coordinates coordinates() {
 		return this.photo.getCoordinates();
 	}
 
 	@Override
-	public String getHTMLInfo() {
+	public String annotations() {
 		return this.photo.getUser() + ": " + this.photo.getDescription();
 	}
 
