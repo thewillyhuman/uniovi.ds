@@ -10,23 +10,17 @@ public class NSFS {
 	
 	public static final NSFS FileSystem = new NSFS();
 	
-	private static final String path = "io/guill/uniovi/ds/practica7/docs/";
+	public static final String RELATIVE_PATH = "io/guill/uniovi/ds/practica7/docs/";
+	public static final String DEFAULT_ENCODING = "UTF-8";
 	
 	private NSFS() {}
 	
 	public void copyFile(String name, IOOProtocol output) {
 		byte[] encoded = null;
 		try {
-			encoded = Files.readAllBytes(Paths.get(path+name));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			output.send(new String(encoded, "UTF-8"));
+			encoded = Files.readAllBytes(Paths.get(RELATIVE_PATH+name));
+			output.send(new String(encoded, DEFAULT_ENCODING));
 			output.close();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

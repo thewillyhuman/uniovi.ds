@@ -17,10 +17,11 @@ public class FKFileEncrypter implements IOOProtocol {
 		StringBuilder encrypted = new StringBuilder();
 		for(int i = 0; i < c.length(); i++) {
 			char current = c.charAt(i);
-			if(Character.isLetter(current) || Character.isDigit(current))
+			if(Character.isLetter(current) || Character.isDigit(current)) {
 				encrypted.append(((char)((int)current+1)));
-			else
+			} else {
 				encrypted.append(current);
+			}
 		}
 		this.output.send(encrypted.toString());
 	}
