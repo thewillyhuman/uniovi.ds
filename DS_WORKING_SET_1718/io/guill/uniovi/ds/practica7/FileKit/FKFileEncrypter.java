@@ -13,9 +13,16 @@ public class FKFileEncrypter implements IOOProtocol {
 	}
 	
 	@Override
-	public void send(char c) throws IOException {
-		this.output.send(((char)((int)c+1)));
-		
+	public void send(String c) throws IOException {
+		StringBuilder encrypted = new StringBuilder();
+		for(int i = 0; i < c.length(); i++) {
+			char current = c.charAt(i);
+			if(Character.isLetter(current) || Character.isDigit(current))
+				encrypted.append(((char)((int)current+1)));
+			else
+				encrypted.append(current);
+		}
+		this.output.send(encrypted.toString());
 	}
 
 	@Override

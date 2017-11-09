@@ -12,7 +12,7 @@ public class WKInternetSession implements IOOProtocol {
 		stringWriter.append("\n--- START Internet [" + url.value() + "]\n");
 	}
 
-	public void send(char c) throws IOException {
+	public void send(String c) throws IOException {
 		stringWriter.append(c);
 	}
 

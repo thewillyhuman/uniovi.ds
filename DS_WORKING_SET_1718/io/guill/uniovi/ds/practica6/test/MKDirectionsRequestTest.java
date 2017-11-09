@@ -31,9 +31,12 @@ public class MKDirectionsRequestTest {
 		
 		long timeForGPS = bb-ba;
 		
-		System.out.print(timeForMK + " " + timeForGPS);
+		System.out.println(timeForMK + " " + timeForGPS);
 		
-		assertTrue(timeForGPS+(timeForGPS*0.1)>=timeForMK);
+		System.out.println( ((double) timeForMK) / ((double)timeForGPS));
+		System.out.println( ((double) timeForGPS) / ((double)timeForMK));
+		
+		assertTrue(timeForGPS+(timeForGPS*0.4)>=timeForMK);
 	}
 
 }

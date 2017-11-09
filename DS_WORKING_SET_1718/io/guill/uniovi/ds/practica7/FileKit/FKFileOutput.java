@@ -13,7 +13,7 @@ public class FKFileOutput implements IOOProtocol {
 	}
 
 	@Override
-	public void send(char c) throws IOException {
+	public void send(String c) throws IOException {
 		file.file().append(c);
 	}
 
