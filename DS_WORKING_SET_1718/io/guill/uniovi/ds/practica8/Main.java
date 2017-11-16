@@ -15,27 +15,41 @@ public class Main {
 		
 		// First modification.
 		PKQuestion encuesta = new PKQuestion("¿Está a favor de la energia nuclear?",
-				new CKBarChart(), new CKPieChart(), new CKStatusLine());
+				new CKBarChart(),
+				new CKPieChart(),
+				new CKStatusLine());
+		
 		userInterface.rellena(encuesta);
 		
 		// Second modification.
 		encuesta = new PKQuestion("¿Está a favor de la energia nuclear?",
-				new CKPieChart(), new CKStatusLine());
+				new CKPieChart(),
+				new CKStatusLine());
+		
 		userInterface.rellena(encuesta);
 		
 		// Third modification.
 		encuesta = new PKQuestion("¿Está a favor de la energia nuclear?",
-				new CKBarChart(), new CKComposedChart(new CKPieChart(), 3, 1), new CKStatusLine());
+				new CKBarChart(),
+				new CKComposedChart(new CKPieChart(), 3, 1),
+				new CKStatusLine());
+		
 		userInterface.rellena(encuesta);
 		
 		// Fourth modification.
 		encuesta = new PKQuestion("¿Está a favor de la energia nuclear?",
-				new CKBarChart(), new CKComposedChart(new CKPieChart(), 1, 3), new CKStatusLine());
+				new CKBarChart(),
+				new CKComposedChart(new CKPieChart(), 1, 3),
+				new CKStatusLine());
+		
 		userInterface.rellena(encuesta);
 		
 		// Last modification.
 		encuesta = new PKQuestion("¿Está a favor de la energia nuclear?",
-				new CKBarChart(), new CKPieChart(), new CKComposedChart(new CKStatusLine(), 4, 2));
+				new CKBarChart(),
+				new CKPieChart(),
+				new CKComposedChart(new CKStatusLine(), 4, 2));
+		
 		userInterface.rellena(encuesta);
 	}
 
