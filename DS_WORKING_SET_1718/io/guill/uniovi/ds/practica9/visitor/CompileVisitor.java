@@ -62,10 +62,10 @@ public class CompileVisitor implements Visitor {
 		System.out.print("Enter the " + e.var.name + ": ");
 		try {
 			String s = br.readLine();
+			System.out.println( s );
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
 		return null;
 	}
 
