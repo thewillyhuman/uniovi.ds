@@ -4,10 +4,13 @@ import java.awt.Point;
 
 import io.guill.uniovi.ds.practica10.platform.Image2D;
 
-public abstract class BallGame {
-	
+// If the second implementation were the only and final one this class would be abstract.
+public class BallGame {
+
 	private IBallGame platform;
-	
+
+	public BallGame() {}
+
 	public BallGame(IBallGame platform) {
 		this.platform = platform;
 	}
@@ -22,20 +25,18 @@ public abstract class BallGame {
 		}
 	}
 
-	/*private void setAPI(IBallGame platform) {
-		this.platform = platform;
-	}*/
+	// And those three methods will have no implementation --> abstract.
 
-	abstract Image2D loadImage(String file);/* {
-		return platform.loadImage( file );
-	}*/
+	Image2D loadImage(String file) {
+		return platform.loadImage(file);
+	}
 
-	abstract Point getPosition();/* {
+	Point getPosition() {
 		return this.platform.getInteraction();
-	}*/
+	}
 
-	abstract void drawBall(Image2D image, Point point);/* {
-		this.platform.draw( point.x, point.y, image );
-	}*/
+	void drawBall(Image2D image, Point point) {
+		this.platform.draw(point.x, point.y, image);
+	}
 
 }
